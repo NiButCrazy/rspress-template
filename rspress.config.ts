@@ -2,7 +2,7 @@ import { defineConfig } from '@rspress/core';
 
 export default defineConfig({
   lang: 'zh',
-  base: '/repress-template/',
+  base: '/rspress-template/',
   title: '指南模板',
   icon: '/rspress-icon.png',
   logo: {
