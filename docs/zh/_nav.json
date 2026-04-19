@@ -1,0 +1,16 @@
+[
+  {
+    "text": "guide",
+    "link": "/guide/start/introduction",
+    "activeMatch": "/guide/"
+  },
+  {
+    "text": "API",
+    "link": "/api/",
+    "activeMatch": "/api/"
+  },
+  {
+    "text": "document",
+    "link": "https://rspress.rs/zh/"
+  }
+]

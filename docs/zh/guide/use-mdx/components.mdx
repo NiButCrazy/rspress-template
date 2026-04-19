@@ -1,0 +1,47 @@
+# MDX 和 React 组件
+
+Rspress 支持 [MDX](https://mdxjs.com/)，这是一种将 Markdown 与 JSX 无缝融合的内容创作格式。MDX 允许你在文档中直接使用 React 组件，结合了 Markdown 的简洁语法和 React 生态的强大能力，非常适合构建交互式、组件化的技术文档。
+
+## Markdown
+
+MDX 是 Markdown 与 JSX 语法的结合，让你可以在 Markdown 文档中使用 React 组件。
+
+```md
+# Hello world
+```
+
+## 使用组件
+
+当你想在 Markdown 文件中使用 React 组件时，应将文件的扩展名改为 `.mdx`。
+
+```mdx
+// docs/index.mdx
+import { CustomComponent } from './custom';
+
+# Hello world
+
+<CustomComponent />
+```
+
+## 使用 Rspress 的内置组件
+
+import { Tabs, Tab } from '@rspress/core/theme';
+
+<Tabs>
+
+<Tab label="foo.js">
+
+```js
+console.log('foo');
+```
+
+</Tab>
+<Tab label="bar.js">
+
+```js
+console.log('bar');
+```
+
+</Tab>
+
+</Tabs>
