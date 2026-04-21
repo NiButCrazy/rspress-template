@@ -1,28 +1,28 @@
-# Rspress website
+# Rspress 自用构建模板
 
-## Setup
+## 安装
 
-Install the dependencies:
+下载依赖:
 
 ```bash
 npm install
 ```
 
-## Get started
+## 开始
 
-Start the dev server:
+启动 Dev 开发服务:
 
 ```bash
 npm run dev
 ```
 
-Build the website for production:
+为生产构建网站:
 
 ```bash
 npm run build
 ```
 
-Preview the production build locally:
+在本地预览生产构建:
 
 ```bash
 npm run preview

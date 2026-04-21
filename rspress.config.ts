@@ -5,6 +5,9 @@ export default defineConfig({
   base: '/rspress-template/',
   title: '指南模板',
   icon: '/rspress-icon.png',
+  route: {
+    cleanUrls: true,
+  },
   logo: {
     light: '/rspress-light-logo.png',
     dark: '/rspress-dark-logo.png',
