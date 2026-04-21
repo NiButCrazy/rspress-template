@@ -1,6 +1,11 @@
-import { NavHamburger as BasicNavHamburger} from '@rspress/core/theme-original';
+import { 
+  NavHamburger as BasicNavHamburger, 
+  SwitchAppearance as BasicSwitchAppearance ,
+} from '@rspress/core/theme-original';
 
-/* 自己的 hamburger 按钮 */
+import { useDark } from '@rspress/core/runtime';
+
+// 自己的 hamburger 按钮
 function NavHamburger(){
   return (
     <div className="nbc-nav-container">
@@ -14,7 +19,23 @@ function NavHamburger(){
   );
 }
 
+// 修复主题无法切换至 auto 的问题
+function SwitchAppearance(){
+  const isDark = useDark();
+  
+  const handleClick = useCallback(()=>{
+    const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    // isDark 是 onclick 点击后改变的, 因此 handleClick 里的 isDark 是上一次的值
+    if(preferDark === !isDark){
+      localStorage.setItem('rspress-theme-appearance', 'auto')
+    }
+  }, [isDark])
+  
+  return <BasicSwitchAppearance onClick={handleClick}/>
+}
 
-export { NavHamburger}
+
+export { NavHamburger, SwitchAppearance }
 export * from '@rspress/core/theme-original';
 import './index.css';
+import { useCallback } from 'react';
