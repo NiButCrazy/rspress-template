@@ -1,9 +1,9 @@
 import { defineConfig } from '@rspress/core';
+import { pluginLess } from '@rsbuild/plugin-less';
 
 export default defineConfig({
   lang: 'zh',
   base: '/rspress-template/',
-  title: '指南模板',
   icon: '/rspress-icon.png',
   route: {
     cleanUrls: true,
@@ -22,7 +22,7 @@ export default defineConfig({
     {
       lang: 'zh',
       label: '简体中文',
-      title: 'Rspress',
+      title: '指南模板',
       description: '静态网站生成器',
     },
   ],
@@ -35,4 +35,7 @@ export default defineConfig({
       },
     ],
   },
+  builderConfig: {
+    plugins: [ pluginLess() ]
+  } 
 });

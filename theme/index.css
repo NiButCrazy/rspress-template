@@ -1,13 +1,3 @@
-
-/* :root {
-  --rp-c-brand: #8B5CF6;
-  --rp-c-brand-dark: #7a44f5;
-  --rp-c-brand-darker: #692cf3;
-  --rp-c-brand-light: #ad8cf9;
-  --rp-c-brand-lighter: #d0bdfb;
-  --rp-c-brand-tint: rgba(139, 92, 246, 0.15);
-} */
-
 body,.rp-nav, .rp-doc-layout__doc, .rp-doc-layout__sidebar {
   transition: all 0.3s ease-in-out;
 }

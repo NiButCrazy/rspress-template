@@ -1,11 +1,24 @@
 import { 
   NavHamburger as BasicNavHamburger, 
   SwitchAppearance as BasicSwitchAppearance ,
+  Layout as BasicLayout
 } from '@rspress/core/theme-original';
 import './index.css';
 
 import { useDark } from '@rspress/core/runtime';
 import { useCallback } from 'react';
+import { CssModificationProvider } from '../docs/components/CssModificationContext';
+import { CssStyleSync } from '../docs/components/CssStyleSync';
+
+
+function Layout() {
+  return (
+    <CssModificationProvider>
+      <CssStyleSync />
+      <BasicLayout />
+    </CssModificationProvider>
+  )
+}
 
 
 // 自己的 hamburger 按钮
@@ -44,7 +57,7 @@ function SwitchAppearance(){
 }
 
 
-export { NavHamburger, SwitchAppearance }
+export { NavHamburger, SwitchAppearance, Layout }
 export * from '@rspress/core/theme-original';
 
 

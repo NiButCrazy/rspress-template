@@ -14,5 +14,17 @@
   "document": {
     "en": "Document",
     "zh": "文档"
+  },
+  "css.picker.custom": {
+    "en": "Custom",
+    "zh": "自定义"
+  },
+  "css.picker.custom.title": {
+    "en": "Custom Color",
+    "zh": "自定义颜色"
+  },
+  "css.picker.default": {
+    "en": "Default",
+    "zh": "默认"
   }
 }
