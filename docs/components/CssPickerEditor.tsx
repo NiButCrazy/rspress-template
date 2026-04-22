@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import INITIAL_CONTENT from '@rspress/core/dist/theme/styles/vars/brand-vars.css?raw';
+import INITIAL_CONTENT from '@rspress/core/theme/styles/vars/brand-vars.css?raw';
 import { useCssEntry } from './CssModificationContext';
 import { LiveCodeEditor } from './LiveCodeEditor';
-import { useI18n } from '@rspress/core/dist/runtime/index.js';
+import { useI18n } from '@rspress/core/runtime';
+
 
 function useDebounce<T extends (...args: any[]) => void>(
   fn: T,
@@ -201,7 +202,7 @@ export function CssPickerEditor() {
   }, [value]);
 
   const isCustomized = activeTab === 0 && value !== INITIAL_CONTENT;
-  const firstTabLabel =t(isCustomized ? 'css.picker.custom' : 'css.picker.default');
+  const firstTabLabel = t(isCustomized ? 'css.picker.custom' : 'css.picker.default');
 
   const handleTabChange = (tabIndex: number) => {
     setActiveTab(tabIndex);
@@ -283,7 +284,6 @@ export function CssPickerEditor() {
             <button
               key={tab.label}
               onClick={() => handleTabChange(index + 1)}
-              title={tab.label}
               style={{
                 width: 20,
                 height: 20,

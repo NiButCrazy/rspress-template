@@ -7,6 +7,7 @@ export default defineConfig({
   icon: '/rspress-icon.png',
   route: {
     cleanUrls: true,
+    exclude: ['components/**'],
   },
   logo: {
     light: '/rspress-light-logo.png',
@@ -37,5 +38,5 @@ export default defineConfig({
   },
   builderConfig: {
     plugins: [ pluginLess() ]
-  } 
+  },
 });
