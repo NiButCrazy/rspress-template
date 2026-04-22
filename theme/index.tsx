@@ -3,7 +3,7 @@ import {
   SwitchAppearance as BasicSwitchAppearance ,
   Layout as BasicLayout
 } from '@rspress/core/theme-original';
-import './index.css';
+import './index.less';
 
 import { useDark } from '@rspress/core/runtime';
 import { useCallback } from 'react';

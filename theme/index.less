@@ -41,7 +41,22 @@ body,.rp-nav, .rp-doc-layout__doc, .rp-doc-layout__sidebar {
     opacity: .7;
     background-color: var(--rp-c-bg-mute);
   }
+}
 
+
+// 搜索框优化
+.rp-search-panel__results{
+  border-radius: var(--rp-radius-small);
+}
+
+.rp-search-panel__cancel{
+  font-size: 13px;
+}
+
+.rp-search-panel__modal{
+  background: color-mix(in srgb, var(--rp-c-bg) 70%, transparent);
+  backdrop-filter: blur(25px);
+  animation: slideIn 0.25s ease forwards;
 }
 
 /* 移动端和平板优化 */
