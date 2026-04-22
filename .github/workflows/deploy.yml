@@ -24,21 +24,22 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: pnpm/action-setup@v3
+
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v6
         with:
-          version: 8
-      - name: 设置 Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: pnpm
+          version: 10
+          cache: true
+
       - name: 配置页面
         uses: actions/configure-pages@v5
+
       - name: 下载依赖项
         run: pnpm install
       - name: 使用 Rspress 构建页面
         run: |
           pnpm run build
+
       - name: 上传资源文件
         uses: actions/upload-pages-artifact@v3
         with:
