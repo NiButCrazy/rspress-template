@@ -7,6 +7,13 @@ body,.rp-nav, .rp-doc-layout__doc, .rp-doc-layout__sidebar {
   :root{
     --rp-z-index-nav: 0;
   }
+  // 导航滚动视图优化
+  html {
+    scroll-padding-top: calc(
+      var(--rp-banner-height, 0px) + var(--rp-sidebar-menu-height)
+    );
+  }
+  
   .rp-nav{
     position: relative;
   }
