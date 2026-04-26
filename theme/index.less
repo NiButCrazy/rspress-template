@@ -3,10 +3,12 @@
 :where(html:not(.rp-dark)) {
   --rp-code-block-bg: var(--rp-c-bg-soft);
   --rp-code-title-bg: #fcfdfd;
+  --rp-c-text-select: black;
 }
 
 :where(html.rp-dark){
   --rp-c-bg: #1b1b1f;
+  --rp-c-text-select: white;
   --rp-c-text-1: #dfdfd6;
   --rp-c-text-2: #98989f;
   --rp-c-text-3: #6a6a71;
@@ -39,6 +41,14 @@ body,
   transition: all 0.3s ease-in-out;
 }
 
+::selection {
+  // background-color: color-mix(in srgb, var(--rp-c-brand), transparent 80%);
+  background-color: var(--rp-c-brand-tint);
+  // color: contrast-color(var(--rp-c-brand-tint));
+  color: var(--rp-c-text-select);
+}
+
+
 html {
   scroll-padding-top: calc(
     var(--rp-banner-height)
@@ -46,6 +56,13 @@ html {
     + var(--rp-sidebar-menu-height)
     + 20px
   );
+}
+
+// 不可选中区域
+.rp-search-button,
+.rp-search-panel__input
+{
+  user-select: none;
 }
 
 /* 移动端优化 */
@@ -188,6 +205,31 @@ html {
 
 .rp-nav-hamburger__sm>svg, .rp-nav-hamburger__md>svg{
   visibility: hidden;
+}
+
+// 自己的语言小语言标签
+.nbc-lang{
+  z-index: 2;
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 11px;
+  font-weight: 500;
+  transition: color .3s, opacity .3s;
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  // top: 2px;
+  // right: 8px;
+  color: var(--rp-c-text-3);
+
+  // 移除语言标签
+  &.remove-nbc-lang{
+    display: none;
+  }
+}
+
+.rp-codeblock__content:hover .nbc-lang{
+  opacity: 0;
 }
 
 

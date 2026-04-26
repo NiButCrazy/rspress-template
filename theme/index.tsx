@@ -3,6 +3,7 @@ import {
   SwitchAppearance as BasicSwitchAppearance ,
   Layout as BasicLayout,
   Tabs as BasicTabs, type TabsProps,
+  CodeBlock as BasicCodeBlock, type CodeBlockProps,
 } from '@rspress/core/theme-original';
 import './index.less';
 import './icon.less';
@@ -12,6 +13,17 @@ import { useCallback, type ReactNode } from 'react';
 import { CssModificationProvider } from '@docs/CssModificationContext';
 import { CssStyleSync } from '@docs/CssStyleSync';
 
+
+// 代码块添加自定义的小语言标签
+function CodeBlock(_props: CodeBlockProps) {
+  const { children, ...props } = _props;
+  return (
+    <BasicCodeBlock {...props} >
+      { props.lang !== 'txt' && <span className='nbc-lang'>{ props.lang }</span>}
+      {children}
+    </BasicCodeBlock>
+  )
+}
 
 type TabItem = {
     label?: string | ReactNode;
@@ -92,7 +104,7 @@ function SwitchAppearance(){
   return <BasicSwitchAppearance onClick={ handleClick }/>
 }
 
-export { NavHamburger, SwitchAppearance, Layout, Tabs }
+export { NavHamburger, SwitchAppearance, Layout, Tabs, CodeBlock }
 export * from '@rspress/core/theme-original';
 
 
