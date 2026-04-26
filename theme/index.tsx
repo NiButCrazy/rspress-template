@@ -1,16 +1,53 @@
 import { 
   NavHamburger as BasicNavHamburger, 
   SwitchAppearance as BasicSwitchAppearance ,
-  Layout as BasicLayout
+  Layout as BasicLayout,
+  Tabs as BasicTabs, type TabsProps
 } from '@rspress/core/theme-original';
 import './index.less';
+import './icon.less'
 
 import { useDark } from '@rspress/core/runtime';
-import { useCallback } from 'react';
-import { CssModificationProvider } from '../docs/components/CssModificationContext';
-import { CssStyleSync } from '../docs/components/CssStyleSync';
+import { useCallback, type ReactElement, type ReactNode } from 'react';
+import { CssModificationProvider } from '@docs/CssModificationContext';
+import { CssStyleSync } from '@docs/CssStyleSync';
 
 
+type TabItem = {
+    label?: string | ReactNode;
+    disabled?: boolean;
+    content?: ReactNode;
+};
+
+// 支持 tab 图标自定义组件
+function Tabs(_props: TabsProps){
+  const { children, ...props } = _props;
+  console.log(children)
+  if(Array.isArray(children)){
+    const values: TabItem[] = []
+    children.forEach( item => {
+      // 逆天,但没办法
+      const lang = item.props?.children?.props?.children?.props?.lang
+      values.push({
+        label: lang 
+          ? <span className={`icon-${lang}`}>{item.props.label}</span>
+          : item.props.label,
+        content: item.props.children
+      })
+    })
+    // 返回自定义图标组件
+    return (
+      <BasicTabs {...props} values={values}>{children}</BasicTabs>
+    )
+  }
+  
+  return (
+    <BasicTabs {...props}>{children}</BasicTabs>
+  )
+}
+
+
+// 基础布局添加上 css 上下文
 function Layout() {
   return (
     <CssModificationProvider>
@@ -56,8 +93,7 @@ function SwitchAppearance(){
   return <BasicSwitchAppearance onClick={ handleClick }/>
 }
 
-
-export { NavHamburger, SwitchAppearance, Layout }
+export { NavHamburger, SwitchAppearance, Layout, Tabs }
 export * from '@rspress/core/theme-original';
 
 

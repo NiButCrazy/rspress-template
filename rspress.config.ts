@@ -28,6 +28,10 @@ export default defineConfig({
     },
   ],
   themeConfig: {
+    footer: {
+      message:
+        '<p>© 2026-present NiButCrazy Inc.</p>',
+    },
     socialLinks: [
       {
         icon: 'github',

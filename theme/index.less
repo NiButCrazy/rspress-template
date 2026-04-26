@@ -1,4 +1,42 @@
-body,.rp-nav, .rp-doc-layout__doc, .rp-doc-layout__sidebar {
+
+
+:where(html:not(.rp-dark)) {
+  --rp-code-block-bg: var(--rp-c-bg-soft);
+  --rp-code-title-bg: #fcfdfd;
+}
+
+:where(html.rp-dark){
+  --rp-c-bg: #1b1b1f;
+  --rp-c-text-1: #dfdfd6;
+  --rp-c-text-2: #98989f;
+  --rp-c-text-3: #6a6a71;
+  --rp-code-block-bg: var(--rp-c-bg-soft);
+  --rp-code-title-bg: var(--rp-c-bg-mute);
+  --rp-c-bg-mute-light: #3f4655;
+  --rp-c-bg-mute-lighter: #474d5e;
+
+  // 深色模式导航栏
+  .rp-nav{
+    border-bottom: 1.5px solid #000;
+  }
+
+  
+  .rp-tabs__label__item--not-selected:hover {
+    background-color: var(--rp-c-bg-mute-light);
+  }
+}
+
+.dark .rp-tabs__label__item--selected{
+  background-color: var(--rp-c-bg-mute-lighter);
+}
+
+body, 
+.rp-nav, 
+.rp-codeblock__content,
+.rp-doc-layout__doc, 
+.rp-tabs__label,
+.rp-codeblock__title,
+.rp-doc-layout__sidebar {
   transition: all 0.3s ease-in-out;
 }
 
@@ -50,6 +88,11 @@ body,.rp-nav, .rp-doc-layout__doc, .rp-doc-layout__sidebar {
   }
 }
 
+
+// 上下页按钮
+.rp-prev-next-page__item__title{
+  font-weight: 500;
+}
 
 // 搜索框优化
 .rp-search-panel__results{

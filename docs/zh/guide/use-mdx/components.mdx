@@ -28,20 +28,18 @@ import { CustomComponent } from './custom';
 import { Tabs, Tab } from '@rspress/core/theme';
 
 <Tabs>
+  <Tab label="foo.js">
 
-<Tab label="foo.js">
+  ```js title="src/foo.js"
+  console.log('foo');
+  ```
 
-```js
-console.log('foo');
-```
+  </Tab>
+  <Tab label="bar.ts">
 
-</Tab>
-<Tab label="bar.js">
+  ```ts
+  console.log('bar');
+  ```
 
-```js
-console.log('bar');
-```
-
-</Tab>
-
+  </Tab>
 </Tabs>

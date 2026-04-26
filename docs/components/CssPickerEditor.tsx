@@ -239,7 +239,7 @@ export function CssPickerEditor() {
           gap: '12px',
           padding: '12px 16px',
           marginBottom: 16,
-          backgroundColor: 'var(--rp-c-bg-soft)',
+          backgroundColor: 'var(--rp-c-bg)',
           border: '1px solid var(--rp-c-divider-light)',
           borderRadius: '8px',
         }}
