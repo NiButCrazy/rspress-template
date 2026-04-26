@@ -8,7 +8,7 @@ import './index.less';
 import './icon.less'
 
 import { useDark } from '@rspress/core/runtime';
-import { useCallback, type ReactElement, type ReactNode } from 'react';
+import { useCallback, type ReactNode } from 'react';
 import { CssModificationProvider } from '@docs/CssModificationContext';
 import { CssStyleSync } from '@docs/CssStyleSync';
 

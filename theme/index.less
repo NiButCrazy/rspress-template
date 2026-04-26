@@ -19,7 +19,6 @@
   .rp-nav{
     border-bottom: 1.5px solid #000;
   }
-
   
   .rp-tabs__label__item--not-selected:hover {
     background-color: var(--rp-c-bg-mute-light);
@@ -48,7 +47,7 @@ body,
   // 导航滚动视图优化
   html {
     scroll-padding-top: calc(
-      var(--rp-banner-height, 0px) + var(--rp-sidebar-menu-height)
+      var(--rp-banner-height, 0px) + var(--rp-sidebar-menu-height) + 20px
     );
   }
   
@@ -214,12 +213,12 @@ body,
 }
 
 .nbc-top    { top: 0; left: 0; transform: translateX(0); }
-.nbc-middle { top: 5px; left: 0; transform: translateX(8px); }
-.nbc-bottom { top: 11px; left: 0; transform: translateX(4px); }
+.nbc-middle { top: 6px; left: 0; transform: translateX(8px); }
+.nbc-bottom { top: 12px; left: 0; transform: translateX(4px); }
 
 .rp-nav-hamburger:hover~.nbc-button-container .nbc-top    { top: 0; left: 0; transform: translateX(4px); }
-.rp-nav-hamburger:hover~.nbc-button-container .nbc-middle { top: 5px; left: 0; transform: translateX(0); }
-.rp-nav-hamburger:hover~.nbc-button-container .nbc-bottom { top: 11px; left: 0; transform: translateX(8px); }
+.rp-nav-hamburger:hover~.nbc-button-container .nbc-middle { top: 6px; left: 0; transform: translateX(0); }
+.rp-nav-hamburger:hover~.nbc-button-container .nbc-bottom { top: 12px; left: 0; transform: translateX(8px); }
 
 .rp-nav-hamburger.rp-nav-hamburger--active+div .nbc-top    { top: 6px !important; transform: translateX(0) rotate(225deg) !important; }
 .rp-nav-hamburger.rp-nav-hamburger--active+div .nbc-middle { top: 6px !important; transform: translateX(16px) !important; }
