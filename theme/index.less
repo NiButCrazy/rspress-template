@@ -39,6 +39,15 @@ body,
   transition: all 0.3s ease-in-out;
 }
 
+html {
+  scroll-padding-top: calc(
+    var(--rp-banner-height)
+    + var(--rp-nav-height) 
+    + var(--rp-sidebar-menu-height)
+    + 20px
+  );
+}
+
 /* 移动端优化 */
 @media (max-width: 768px) {
   :root{
@@ -46,13 +55,16 @@ body,
   }
   // 导航滚动视图优化
   html {
-    scroll-padding-top: calc(
-      var(--rp-banner-height, 0px) + var(--rp-sidebar-menu-height) + 20px
-    );
+    scroll-padding-top: calc( var(--rp-sidebar-menu-height) + 20px );
+  }
+
+  .rp-banner{
+    position: relative;
   }
   
   .rp-nav{
     position: relative;
+    top: 0;
   }
   
   .rp-doc-layout__menu{
@@ -64,9 +76,11 @@ body,
     top: 0;
     max-height: 100%;
     height: 100%;
+    z-index: 999;
   }
 
   .rp-doc-layout__outline{
+    top: var(--rp-nav-height);
     margin-top: -15px;
     margin-right: 5px;
   }

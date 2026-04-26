@@ -2,10 +2,10 @@ import {
   NavHamburger as BasicNavHamburger, 
   SwitchAppearance as BasicSwitchAppearance ,
   Layout as BasicLayout,
-  Tabs as BasicTabs, type TabsProps
+  Tabs as BasicTabs, type TabsProps,
 } from '@rspress/core/theme-original';
 import './index.less';
-import './icon.less'
+import './icon.less';
 
 import { useDark } from '@rspress/core/runtime';
 import { useCallback, type ReactNode } from 'react';
@@ -22,7 +22,6 @@ type TabItem = {
 // 支持 tab 图标自定义组件
 function Tabs(_props: TabsProps){
   const { children, ...props } = _props;
-  console.log(children)
   if(Array.isArray(children)){
     const values: TabItem[] = []
     children.forEach( item => {
@@ -40,7 +39,7 @@ function Tabs(_props: TabsProps){
       <BasicTabs {...props} values={values}>{children}</BasicTabs>
     )
   }
-  
+  // 兜底默认
   return (
     <BasicTabs {...props}>{children}</BasicTabs>
   )
