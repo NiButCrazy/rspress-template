@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="meta-json-schema">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="新建架构" />
+              <option name="name" value="meta-json-schema" />
+              <option name="relativePathToSchema" value="./node_modules/@rspress/core/meta-json-schema.json" />
+              <option name="schemaVersion" value="JSON 架构 7" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="pattern" value="true" />
+                    <option name="path" value="**/_meta.json" />
+                    <option name="mappingKind" value="Pattern" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+        <entry key="nav-json-schema">
+          <value>
+            <SchemaInfo>
+              <option name="generatedName" value="新建架构" />
+              <option name="name" value="nav-json-schema" />
+              <option name="relativePathToSchema" value="./node_modules/@rspress/core/nav-json-schema.json" />
+              <option name="schemaVersion" value="JSON 架构 7" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="pattern" value="true" />
+                    <option name="path" value="**/_nav.json" />
+                    <option name="mappingKind" value="Pattern" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>

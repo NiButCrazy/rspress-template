@@ -11,4 +11,6 @@ doc_build/
 # IDE
 .vscode/*
 !.vscode/extensions.json
-.idea
+!.vscode/settings.json
+.idea/*
+!.idea/jsonSchemas.xml
