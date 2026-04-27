@@ -229,11 +229,17 @@ html {
     display: none;
   }
 }
-
+// 鼠标移入时隐藏语言标签
 .rp-codeblock__content:hover .nbc-lang{
   opacity: 0;
 }
 
+// 通过 title 额外参数移除 titile 图标
+.rp-codeblock:has(.nbc-lang.remove-nbc-icon){
+  .rp-codeblock__title::before{
+    display: none;
+  }
+}
 
 /* 自己的 hamburger 按钮 */
 

@@ -17,14 +17,33 @@ import { CssStyleSync } from '@docs/CssStyleSync';
 // 代码块添加自定义的小语言标签
 function CodeBlock(_props: CodeBlockProps) {
   const { children, ...props } = _props;
+  // 通过给 title 添加额外字符串参数移除图标和语言标签
+  const removeIconKeyword = '--remove-icon'
+  const removeLangKeyword = '--remove-lang'
+  // 基础样式
+  let className = 'nbc-lang rp-copy-ignore'
+
+  if(props.title) {
+    if(props.title.includes(removeIconKeyword)) {
+      props.title = props.title.replace(removeIconKeyword, '')
+      className += ' remove-nbc-icon'
+    }
+    if(props.title.includes(removeLangKeyword)) {
+      props.title = props.title.replace(removeLangKeyword, '')
+      className += ' remove-nbc-lang'
+    }
+  }
+
+  // 默认 txt 语言不显示语言标签
   return (
     <BasicCodeBlock {...props} >
-      { props.lang !== 'txt' && <span className='nbc-lang rp-copy-ignore'>{ props.lang }</span>}
+      <span className={ className }>{ props.lang !== 'txt' && props.lang }</span>
       {children}
     </BasicCodeBlock>
   )
 }
 
+// Tab 类型定义
 type TabItem = {
     label?: string | ReactNode;
     disabled?: boolean;
@@ -34,11 +53,27 @@ type TabItem = {
 // 支持 tab 图标自定义组件
 function Tabs(_props: TabsProps){
   const { children, ...props } = _props;
+  // 只针对数组, 毕竟越复杂越容易出错
   if(Array.isArray(children)){
     const values: TabItem[] = []
     children.forEach( item => {
-      // 逆天,但没办法
-      const lang = item.props?.children?.props?.children?.props?.lang
+      // 判断是否移除 label 图标的后缀
+      const suffix = '--remove-icon';
+      const label:string = item?.props?.label
+      // 逆天, 但没办法
+      const lang = item?.props?.children?.props?.children?.props?.lang
+
+      // label 明示移除图标参数
+      if(label && label.endsWith(suffix)){
+        const mainLabel = label.replace(suffix, '').trim();
+        values.push({
+          label: mainLabel,
+          content: item.props.children
+        })
+        return
+      }
+      
+      // 正常的 Tab
       values.push({
         label: lang 
           ? <span className={`icon-${lang}`}>{item.props.label}</span>
