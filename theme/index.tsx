@@ -23,6 +23,7 @@ function CodeBlock(_props: CodeBlockProps) {
   // 基础样式
   let className = 'nbc-lang rp-copy-ignore'
 
+  // 判断 title 额外字符串参数
   if(props.title) {
     if(props.title.includes(removeIconKeyword)) {
       props.title = props.title.replace(removeIconKeyword, '')

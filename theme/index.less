@@ -51,7 +51,7 @@ body,
 
 html {
   scroll-padding-top: calc(
-    var(--rp-banner-height)
+    var(--rp-banner-height, 0px)
     + var(--rp-nav-height) 
     + var(--rp-sidebar-menu-height)
     + 20px
@@ -209,7 +209,7 @@ html {
   visibility: hidden;
 }
 
-// 自己的语言小语言标签
+// 自己的语言小标签
 .nbc-lang{
   z-index: 2;
   -webkit-user-select: none;
@@ -226,6 +226,10 @@ html {
 
   // 移除语言标签
   &.remove-nbc-lang{
+    display: none;
+  }
+  // 根据父容器移除语言标签
+  .remove-code-lang &{
     display: none;
   }
 }
