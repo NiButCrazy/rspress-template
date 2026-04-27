@@ -6,7 +6,7 @@
 
 只利用 `less` 和 `wrap` 实现了代码块小图标功能
 
-![截图](screenshots/img.png)
+![截图](/screenshots/img.png)
 
 并且使用 `less` 添加小图标非常简单
 ```less
@@ -22,11 +22,11 @@
 
 参考了 **vitepress** 的样式，并做了一些颜色修改，更加舒适
 
-![截图2](img2.png)
+![截图2](/screenshots/img2.png)
 
 ### 3. 把 **vitepress** 的动画按钮借鉴过来了嘻嘻
 
-![截图3](img3.png)
+![截图3](/screenshots/img3.png)
 
 ### 3. 移动端菜单栏改为黏滞定位，滑动时隐藏导航栏
 
@@ -43,7 +43,7 @@
 下载依赖:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ## 开始
@@ -51,17 +51,17 @@ npm install
 启动 Dev 开发服务:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 为生产构建网站:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 在本地预览生产构建:
 
 ```bash
-npm run preview
+pnpm run preview
 ```
