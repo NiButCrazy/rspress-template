@@ -19,7 +19,7 @@ function CodeBlock(_props: CodeBlockProps) {
   const { children, ...props } = _props;
   return (
     <BasicCodeBlock {...props} >
-      { props.lang !== 'txt' && <span className='nbc-lang'>{ props.lang }</span>}
+      { props.lang !== 'txt' && <span className='nbc-lang rp-copy-ignore'>{ props.lang }</span>}
       {children}
     </BasicCodeBlock>
   )
