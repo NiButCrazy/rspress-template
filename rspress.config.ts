@@ -1,13 +1,14 @@
 import { defineConfig } from '@rspress/core';
 import { pluginLess } from '@rsbuild/plugin-less';
 
+
 export default defineConfig({
   lang: 'zh',
   base: '/rspress-template/',
   icon: '/rspress-icon.png',
   route: {
     cleanUrls: true,
-    exclude: ['components/**'],
+    exclude: [ 'components/**' ],
   },
   logo: {
     light: '/rspress-light-logo.png',
