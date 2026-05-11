@@ -1,6 +1,5 @@
 import { 
   NavHamburger as BasicNavHamburger, 
-  SwitchAppearance as BasicSwitchAppearance ,
   Layout as BasicLayout,
   Tabs as BasicTabs, type TabsProps,
   CodeBlock as BasicCodeBlock, type CodeBlockProps,
@@ -8,8 +7,7 @@ import {
 import './index.less';
 import './icon.less';
 
-import { useDark } from '@rspress/core/runtime';
-import { useCallback, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { CssModificationProvider } from '@docs/CssModificationContext';
 import { CssStyleSync } from '@docs/CssStyleSync';
 
@@ -119,28 +117,8 @@ function NavHamburger(){
   );
 }
 
-// 修复主题无法切换至 auto 的问题
-function SwitchAppearance(){
-  const isDark = useDark();
-  
-  const handleClick = useCallback(()=>{
-    const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    // isDark 是 onclick 点击后改变的, 因此 handleClick 里的 isDark 是上一次的值
-    if(preferDark === !isDark){
-      localStorage.setItem('rspress-theme-appearance', 'auto');
-      // 触发同步 storage 事件, 无需重新刷新页面
-      window.dispatchEvent(
-        new CustomEvent('RSPRESS_SYNC_STORAGE_EVENT_NAME', {
-          detail: { key: 'rspress-theme-appearance', newValue: 'auto'},
-        })
-      );
-    }
-  }, [isDark])
-  
-  return <BasicSwitchAppearance onClick={ handleClick }/>
-}
 
-export { NavHamburger, SwitchAppearance, Layout, Tabs, CodeBlock }
+export { NavHamburger, Layout, Tabs, CodeBlock }
 export * from '@rspress/core/theme-original';
 
 
