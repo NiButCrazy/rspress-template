@@ -27,6 +27,11 @@
   }
 }
 
+// 修复主页面页脚背景颜色异常的问题
+body:has(.rp-home-background){
+  background-color: inherit;
+}
+
 .dark .rp-tabs__label__item--selected{
   background-color: var(--rp-c-bg-mute-lighter);
 }
