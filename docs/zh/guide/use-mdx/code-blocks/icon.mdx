@@ -90,27 +90,23 @@ import { Badge } from '@rspress/core/theme';
 - 或通过在 title 中添加字符串 `--remove-icon` 来单独隐藏标题图标。
 
   ````md
-  ```js title="foo.js--remove-icon"
+  ```js title="foo.js --remove-icon"
   console.log('Hello World');
   ```
   ````
 
   它将被渲染为：
 
-  ```js title="foo.js--remove-icon"
+  ```js title="foo.js --remove-icon"
   console.log('Hello World');
   ```
-
-  :::warning 注意
-  `title="foo.js--remove-icon"` 中间 **不要** 有空格，**rspress** 会移除空格后的内容。
-  :::
 
 - 或通过在 Tab 的 `label` prop 中添加字符串 `--remove-icon` 来单独隐藏 label 图标。
   ````mdx
   <Tabs>
 
     // label 添加 --remove-icon
-    <Tab label="foo.js--remove-icon">
+    <Tab label="foo.js --remove-icon">
 
     ```js title="src/foo.js"
     console.log('foo');
@@ -128,7 +124,7 @@ import { Badge } from '@rspress/core/theme';
   ````
 
   <Tabs>
-    <Tab label="foo.js--remove-icon">
+    <Tab label="foo.js --remove-icon">
 
     ```js title="src/foo.js"
     console.log('foo');
@@ -150,7 +146,7 @@ import { Badge } from '@rspress/core/theme';
 
 - 同理，父元素添加 `remove-code-lang` 类名来隐藏语言小标签。
 - 或通过在 title 中添加字符串 `--remove-lang` 来单独隐藏标题语言小标签。
-  ```js title="foo.js--remove-lang"
+  ```js title="foo.js --remove-lang"
   console.log('Hello World');
   ```
 

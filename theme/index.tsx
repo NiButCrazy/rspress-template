@@ -44,40 +44,44 @@ function CodeBlock(_props: CodeBlockProps) {
 
 // Tab 类型定义
 type TabItem = {
-    label?: string | ReactNode;
-    disabled?: boolean;
-    content?: ReactNode;
+  label: ReactNode;
+  value: string;
+  disabled?: boolean;
 };
 
 // 支持 tab 图标自定义组件
 function Tabs(_props: TabsProps){
-  const { children, ...props } = _props;
+  const { children, values, ...props } = _props;
+
   // 只针对数组, 毕竟越复杂越容易出错
-  if(Array.isArray(children)){
+  if(!values && Array.isArray(children)){
     const values: TabItem[] = []
     children.forEach( item => {
       // 判断是否移除 label 图标的后缀
       const suffix = '--remove-icon';
+      const defaultValue: undefined | string = item?.props?.value
       const label:string = item?.props?.label
       // 逆天, 但没办法
-      const lang = item?.props?.children?.props?.children?.props?.lang
+      const lang:string = item?.props?.children?.props?.children?.props?.lang
 
       // label 明示移除图标参数
-      if(label && label.endsWith(suffix)){
+      if(label && label.includes(suffix)){
         const mainLabel = label.replace(suffix, '').trim();
         values.push({
           label: mainLabel,
-          content: item.props.children
+          value: defaultValue ?? mainLabel,
         })
         return
       }
+
+      const mainLabel = lang ? 
+        <span className={`icon-${lang}`}>{label}</span>
+        : label
       
       // 正常的 Tab
       values.push({
-        label: lang 
-          ? <span className={`icon-${lang}`}>{item.props.label}</span>
-          : item.props.label,
-        content: item.props.children
+        label: mainLabel,
+        value: defaultValue ?? label,
       })
     })
     // 返回自定义图标组件
@@ -87,7 +91,7 @@ function Tabs(_props: TabsProps){
   }
   // 兜底默认
   return (
-    <BasicTabs {...props}>{children}</BasicTabs>
+    <BasicTabs {...props} values={values}>{children}</BasicTabs>
   )
 }
 
