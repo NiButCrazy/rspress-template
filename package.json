@@ -13,10 +13,10 @@
   },
   "devDependencies": {
     "@rsbuild/plugin-less": "^1.6.3",
-    "@types/node": "^22.19.17",
-    "@types/react": "^19.2.14",
+    "@types/node": "^22.19.19",
+    "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   }
 }
